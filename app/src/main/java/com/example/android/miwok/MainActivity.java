@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Colors
-        TextView colors = (TextVuew) findViewById(R.id.colors);
+        TextView colors = (TextView) findViewById(R.id.colors);
         colors.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
