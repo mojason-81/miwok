@@ -11,22 +11,28 @@ public class Word {
     private String mDefaultTranslation;
     private String mMiwokTranslation;
     private int mImageResourceId = NO_IMAGE_PROVIDED;
+    private int mVoiceResourceId = NO_AUDIO_PROVIDED;
 
-    private static final int NO_IMAGE_PROVIDED = -1;
+    private static final int NO_AUDIO_PROVIDED = -1;
+
+    public static final int NO_IMAGE_PROVIDED = -1;
     /**
      * Create a new Word object.
      *
      * @param defaultTranslation is the word in the language of the user (eg English).
      *
-     * @param miwokTranslation is the word in the Miwok language
+     * @param miwokTranslation is the word in the Miwok language.
      *
      * @param imageResourceId is the drawable resource id of the related image.
      *
+     * @param voiceResourceId is the resource if of the related audio file.
+     *
      */
-    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId) {
+    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId, int voiceResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
         mImageResourceId = imageResourceId;
+        mVoiceResourceId = voiceResourceId;
     }
 
     /**
@@ -36,11 +42,13 @@ public class Word {
      *
      * @param miwokTranslation is the word in the Miwok language
      *
+     * @param voiceResourceId is the drawable resource id of the related image.
+     *
      */
-
-    public Word(String defaultTranslation, String miwokTranslation) {
+    public Word(String defaultTranslation, String miwokTranslation, int voiceResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+        mVoiceResourceId = voiceResourceId;
     }
 
     // Get the Default translation
@@ -58,10 +66,26 @@ public class Word {
         return mImageResourceId;
     }
 
+    // Get the Audio resource ID
+    public int getVoiceResourceId() {
+        return mVoiceResourceId;
+    }
+
+
     /**
      * Returns whether or not there is an image for this word.
      */
     public boolean hasImage() {
         return mImageResourceId != NO_IMAGE_PROVIDED;
+    }
+
+    @Override
+    public String toString() {
+        return "Word{" +
+                "mDefaultTranslation='" + mDefaultTranslation + '\'' +
+                ", mMiwokTranslation='" + mMiwokTranslation + '\'' +
+                ", mAudioResourceId=" + mVoiceResourceId +
+                ", mImageResourceId=" + mImageResourceId +
+                '}';
     }
 }
