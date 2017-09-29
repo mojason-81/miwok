@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -20,6 +19,7 @@ import java.util.ArrayList;
  * A simple {@link Fragment} subclass.
  */
 public class FamilyFragment extends Fragment {
+
     private MediaPlayer mMediaPlayer;
     private final MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
@@ -51,7 +51,6 @@ public class FamilyFragment extends Fragment {
     public FamilyFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -94,6 +93,12 @@ public class FamilyFragment extends Fragment {
         });
 
         return rootView;
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
     }
 
     private void releaseMediaPlayer() {

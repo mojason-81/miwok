@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -20,13 +19,13 @@ import java.util.ArrayList;
  * A simple {@link Fragment} subclass.
  */
 public class PhrasesFragment extends Fragment {
+
     private MediaPlayer mMediaPlayer;
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mediaPlayer) {
             releaseMediaPlayer();
             Log.v("PhrasesActivity", "onCompletion called.");
-            // Toast.makeText(PhrasesActivity.this, "I'm Done!", Toast.LENGTH_SHORT).show();
         }
     };
 
@@ -52,7 +51,6 @@ public class PhrasesFragment extends Fragment {
     public PhrasesFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
