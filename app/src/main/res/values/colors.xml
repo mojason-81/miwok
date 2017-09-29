@@ -34,4 +34,7 @@
 
     <!-- Background color for the phrases category -->
     <color name="category_phrases">#16AFCA</color>
+
+    <!-- Color for non-selected tab -->
+    <color name="nonselected_tab">#A8A19E</color>
 </resources>
